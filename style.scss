@@ -1,0 +1,72 @@
+.message {
+    height: 30px;
+    text-align:center;
+  }
+
+  @function pxToEm($to, $from: 16) {
+    @return $to / $from + 0em;
+  }
+
+  .maze {
+    width: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: pxToEm(20);
+    margin: 40px auto 0 auto;
+    justify-content: center;
+  }
+  
+  .cell {
+    width: pxToEm(80);
+    height: pxToEm(80);
+    background:rgb(231, 231, 231);
+    border: pxToEm(10) solid grey;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    position:relative;
+  }
+  
+  .start {
+    background: rgb(82, 158, 82);
+  }
+  
+  .end {
+    background: rgb(255, 116, 116);
+  }
+  
+  .active::after {
+    content: '';
+    width: pxToEm(40);
+    height: pxToEm(40);
+    background:yellow;
+    border-radius: 50%;
+    border: pxToEm(10) solid grey;
+    z-index: 1;
+  }
+  
+  .active.bomb::after {
+    background:rgb(255, 55, 0);
+    border: pxToEm(10) solid rgb(44, 44, 44);
+  }
+  
+  .bomb::before {
+    content: '';
+    width: pxToEm(40);
+    height: pxToEm(40);
+    background:rgb(36, 36, 27);
+    border-radius: 50%;
+    position:absolute;
+    bottom: pxToEm(4);
+    right: pxToEm(4);
+    border: pxToEm(4) solid rgb(251, 91, 91);
+  }
+  
+  .buttons {
+    margin-top:40px;
+    text-align:center;
+  }
+  
+  .template {
+    display:none;
+  }

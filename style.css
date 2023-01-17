@@ -1,0 +1,68 @@
+.message {
+  height: 30px;
+  text-align: center;
+}
+
+.maze {
+  width: 480px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25em;
+  margin: 40px auto 0 auto;
+  justify-content: center;
+}
+
+.cell {
+  width: 5em;
+  height: 5em;
+  background: rgb(231, 231, 231);
+  border: 0.625em solid grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.start {
+  background: rgb(82, 158, 82);
+}
+
+.end {
+  background: rgb(255, 116, 116);
+}
+
+.active::after {
+  content: "";
+  width: 2.5em;
+  height: 2.5em;
+  background: yellow;
+  border-radius: 50%;
+  border: 0.625em solid grey;
+  z-index: 1;
+}
+
+.active.bomb::after {
+  background: rgb(255, 55, 0);
+  border: 0.625em solid rgb(44, 44, 44);
+}
+
+.bomb::before {
+  content: "";
+  width: 2.5em;
+  height: 2.5em;
+  background: rgb(36, 36, 27);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0.25em;
+  right: 0.25em;
+  border: 0.25em solid rgb(251, 91, 91);
+}
+
+.buttons {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.template {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
